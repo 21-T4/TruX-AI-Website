@@ -1,7 +1,8 @@
-# Allow Googlebot full access
 User-agent: Googlebot
-Disallow:
+Allow: /
 
-# Block all other crawlers
+User-agent: Google Favicon
+Allow: /
+
 User-agent: *
 Disallow: /
