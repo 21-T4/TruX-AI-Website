@@ -3,29 +3,45 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="TruX-AI is a secure, capable AI platform built by TruX-Technologies, It is specially built for deep thinking and focused work." />
+  <meta name="description" content="TruX-AI is a secure, capable AI platform built by TruX-Technologies. It is specially built for deep thinking and focused work." />
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow" />
-  <link rel="canonical" href="https://www.trux.website/" />
+  <link rel="canonical" href="https://trux.website" />
   
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="icon-512.png" />
-  <link rel="apple-touch-icon" href="icon-512.png" />
+  <!-- Favicon Fixes (Tells Google it is a high-res 512px icon to scale down safely) -->
+  <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="/icon-512.png" />
+  <link rel="shortcut icon" href="/icon-512.png" />
 
+  <!-- Open Graph (For Social Media Links) -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.trux.website/" />
+  <meta property="og:url" content="https://trux.website" />
   <meta property="og:title" content="TruX-AI — Intelligence, with boundaries." />
   <meta property="og:description" content="A secure AI platform by TruX-Technologies, built for deep thinking and focused work." />
-  <title>TruX — Intelligence, with boundaries.</title>
   
+  <!-- Search Engine Title -->
+  <title>TruX-AI</title>
+  
+  <!-- Schema.org JSON-LD (Tells Google to display the name TruX-AI above the URL) -->
   <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"SoftwareApplication","name":"TruX","url":"https://www.trux.website/","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"A secure AI platform by TruX-Technologies, built for deep thinking and focused work.","provider":{"@type":"Organization","name":"TruX-Technologies","url":"https://www.trux.website/"}}
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "TruX-AI",
+      "url": "https://trux.website",
+      "provider": {
+        "@type": "Organization",
+        "name": "TruX-Technologies",
+        "url": "https://trux.website"
+      }
+    }
   </script>
   
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://googleapis.com" />
+  <link rel="preconnect" href="https://gstatic.com" crossorigin />
+  <link href="https://googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
   <style>
     :root {
       --ink: #f7f7ff;
