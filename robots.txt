@@ -1,8 +1,2 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Google Favicon
-Allow: /
-
 User-agent: *
-Disallow: /
+Disallow:
