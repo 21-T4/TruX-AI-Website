@@ -12,16 +12,14 @@
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow" />
 
-  <link rel="canonical" href="https://chat.trux.website/" />
+  <link rel="canonical" href="https://www.chat.trux.website/" />
 
-  <!-- Favicon & Manifest (Subdomain Optimized) -->
   <link rel="icon" type="image/svg+xml" sizes="48x48" href="icon-48.svg" />
   <link rel="apple-touch-icon" sizes="48x48" href="icon-48.svg" />
   <link rel="manifest" href="manifest.json" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://chat.trux.website/" />
+  <meta property="og:url" content="https://www.chat.trux.website/" />
   <meta
     property="og:title"
     content="ChatTruX-AI — Think clearly. Build boldly."
@@ -33,23 +31,21 @@
 
   <title>ChatTruX-AI — Think clearly. Build boldly.</title>
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "ChatTruX-AI",
-      "url": "https://chat.trux.website/",
+      "url": "https://www.chat.trux.website/",
       "description": "A focused and privacy-conscious AI assistant by TruX-Technologies.",
       "publisher": {
         "@type": "Organization",
         "name": "TruX-Technologies",
-        "url": "https://chat.trux.website/"
+        "url": "https://www.chat.trux.website/"
       }
     }
   </script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -59,18 +55,19 @@
 
   <style>
     :root {
-      --background: #050506;
-      --background-soft: #0a0a0c;
+      --background: #04070b;
+      --background-soft: #081018;
       --surface: rgba(255, 255, 255, 0.045);
       --surface-hover: rgba(255, 255, 255, 0.075);
-      --ink: #f4f1eb;
-      --muted: #a6a19a;
-      --subtle: #77716b;
-      --line: rgba(255, 255, 255, 0.1);
-      --line-bright: rgba(255, 255, 255, 0.2);
-      --violet: #a98cff;
-      --violet-light: #d3c7ff;
-      --violet-dark: #352760;
+      --ink: #eef7ff;
+      --muted: #aab8c5;
+      --subtle: #71808e;
+      --line: rgba(166, 211, 255, 0.14);
+      --line-bright: rgba(166, 211, 255, 0.3);
+      --blue: #5db7ff;
+      --blue-light: #b9e2ff;
+      --blue-dark: #12365c;
+      --cyan: #68e1ff;
       --white: #ffffff;
     }
 
@@ -88,12 +85,12 @@
       background:
         radial-gradient(
           circle at 12% 0%,
-          rgba(122, 91, 218, 0.16),
+          rgba(45, 142, 220, 0.2),
           transparent 32rem
         ),
         radial-gradient(
           circle at 95% 42%,
-          rgba(102, 76, 174, 0.1),
+          rgba(29, 111, 174, 0.14),
           transparent 30rem
         ),
         var(--background);
@@ -107,7 +104,7 @@
       inset: 0;
       z-index: -1;
       pointer-events: none;
-      opacity: 0.18;
+      opacity: 0.16;
       background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
       content: "";
     }
@@ -120,7 +117,7 @@
     .eyebrow {
       display: inline-block;
       margin-bottom: 8px;
-      color: var(--violet-light);
+      color: var(--blue-light);
       font: 500 11px/1 "DM Mono", monospace;
       letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -130,8 +127,8 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
-      background: rgba(5, 5, 6, 0.78);
+      border-bottom: 1px solid rgba(166, 211, 255, 0.1);
+      background: rgba(4, 7, 11, 0.8);
       backdrop-filter: blur(18px);
     }
 
@@ -140,6 +137,7 @@
       height: 88px;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
     }
 
     .logo {
@@ -158,7 +156,7 @@
       width: 48px;
       height: 48px;
       object-fit: contain;
-      filter: drop-shadow(0 0 16px rgba(169, 140, 255, 0.35));
+      filter: drop-shadow(0 0 16px rgba(93, 183, 255, 0.38));
     }
 
     .core .brand-mark {
@@ -172,14 +170,15 @@
     }
 
     .navlinks a {
-      color: #aaa49e;
+      color: #aab8c5;
       font-size: 13.5px;
       font-weight: 600;
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
-    .navlinks a:hover {
+    .navlinks a:hover,
+    .navlinks a:focus-visible {
       color: var(--white);
     }
 
@@ -192,13 +191,13 @@
       padding: 0 22px;
       border: 1px solid transparent;
       border-radius: 12px;
-      color: #0b0910;
+      color: #03101b;
       background: linear-gradient(
         120deg,
-        var(--violet-light),
-        var(--violet)
+        var(--blue-light),
+        var(--blue)
       );
-      box-shadow: 0 0 28px rgba(169, 140, 255, 0.2);
+      box-shadow: 0 0 28px rgba(93, 183, 255, 0.2);
       font-size: 13px;
       font-weight: 800;
       text-decoration: none;
@@ -208,9 +207,10 @@
         background 0.25s ease;
     }
 
-    .button:hover {
+    .button:hover,
+    .button:focus-visible {
       transform: translateY(-2px);
-      box-shadow: 0 12px 34px rgba(169, 140, 255, 0.32);
+      box-shadow: 0 12px 34px rgba(93, 183, 255, 0.32);
     }
 
     .button.secondary {
@@ -220,7 +220,8 @@
       box-shadow: none;
     }
 
-    .button.secondary:hover {
+    .button.secondary:hover,
+    .button.secondary:focus-visible {
       background: rgba(255, 255, 255, 0.1);
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
     }
@@ -246,13 +247,13 @@
 
     .hero h1 em {
       display: block;
-      color: var(--violet-light);
+      color: var(--blue-light);
       font-style: normal;
     }
 
     .lede {
       max-width: 590px;
-      color: #b7b0a9;
+      color: #b7c4cf;
       font-size: 17px;
       line-height: 1.8;
     }
@@ -269,7 +270,7 @@
     .trustline span::before {
       content: "◆";
       margin-right: 8px;
-      color: var(--violet);
+      color: var(--blue);
       font-size: 8px;
     }
 
@@ -282,7 +283,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      border: 1px solid rgba(169, 140, 255, 0.2);
+      border: 1px solid rgba(93, 183, 255, 0.23);
       border-radius: 50%;
       transform: translate(-50%, -50%);
     }
@@ -301,7 +302,7 @@
     .o3 {
       width: 170px;
       height: 170px;
-      border-color: rgba(211, 199, 255, 0.42);
+      border-color: rgba(185, 226, 255, 0.45);
       transform: translate(-50%, -50%) rotate(-42deg) scaleY(0.68);
     }
 
@@ -317,9 +318,14 @@
       border-radius: 36px;
       background:
         linear-gradient(145deg, rgba(255, 255, 255, 0.42), transparent 35%),
-        radial-gradient(circle at 35% 25%, #eee9ff, #8667dc 52%, #21183e);
+        radial-gradient(
+          circle at 35% 25%,
+          #e8f7ff,
+          #368fd0 52%,
+          #071a2d
+        );
       box-shadow:
-        0 0 80px rgba(122, 91, 218, 0.5),
+        0 0 80px rgba(35, 142, 220, 0.5),
         inset 0 1px rgba(255, 255, 255, 0.4);
       transform: translate(-50%, -50%);
     }
@@ -329,8 +335,8 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: var(--violet-light);
-      box-shadow: 0 0 20px var(--violet);
+      background: var(--blue-light);
+      box-shadow: 0 0 20px var(--blue);
     }
 
     .n1 {
@@ -341,13 +347,13 @@
     .n2 {
       bottom: 78px;
       left: 12%;
-      background: #7b62c5;
+      background: #3479b5;
     }
 
     .n3 {
       right: 15%;
       bottom: 38px;
-      background: #e6dcff;
+      background: #d8f2ff;
     }
 
     .floating-card {
@@ -358,13 +364,13 @@
       padding: 18px 20px;
       border: 1px solid var(--line-bright);
       border-radius: 16px;
-      background: rgba(15, 14, 19, 0.84);
+      background: rgba(8, 15, 23, 0.86);
       box-shadow: 0 18px 42px rgba(0, 0, 0, 0.48);
       backdrop-filter: blur(18px);
     }
 
     .status {
-      color: var(--violet-light);
+      color: var(--blue-light);
       font: 11px "DM Mono", monospace;
     }
 
@@ -374,14 +380,14 @@
       height: 6px;
       margin-right: 7px;
       border-radius: 50%;
-      background: var(--violet);
-      box-shadow: 0 0 12px var(--violet);
+      background: var(--blue);
+      box-shadow: 0 0 12px var(--blue);
       content: "";
     }
 
     .floating-card p {
       margin: 9px 0 0;
-      color: #b2aca7;
+      color: #b2c0cb;
       font-size: 12.5px;
       line-height: 1.6;
     }
@@ -399,7 +405,7 @@
     }
 
     .logos strong {
-      color: #d5d0ca;
+      color: #d3e3ef;
       font-family: "Manrope", sans-serif;
       font-size: 15px;
       letter-spacing: -0.03em;
@@ -462,7 +468,7 @@
       width: 140px;
       height: 140px;
       border-radius: 50%;
-      background: rgba(169, 140, 255, 0.17);
+      background: rgba(93, 183, 255, 0.17);
       filter: blur(32px);
       content: "";
     }
@@ -484,8 +490,8 @@
       place-items: center;
       border: 1px solid var(--line);
       border-radius: 13px;
-      color: var(--violet-light);
-      background: rgba(169, 140, 255, 0.09);
+      color: var(--blue-light);
+      background: rgba(93, 183, 255, 0.09);
       font-size: 18px;
     }
 
@@ -498,7 +504,7 @@
 
     .feature p {
       margin: 0;
-      color: #aaa49f;
+      color: #aab8c5;
       font-size: 13.5px;
       line-height: 1.75;
     }
@@ -509,8 +515,8 @@
       background:
         linear-gradient(
           120deg,
-          rgba(75, 52, 132, 0.16),
-          rgba(10, 10, 13, 0.18)
+          rgba(20, 74, 126, 0.16),
+          rgba(8, 14, 20, 0.18)
         );
     }
 
@@ -531,7 +537,7 @@
       display: flex;
       gap: 16px;
       align-items: flex-start;
-      color: #ddd8d2;
+      color: #d8e6f0;
       font-size: 14.5px;
       line-height: 1.6;
     }
@@ -546,18 +552,18 @@
       width: 24px;
       height: 24px;
       place-items: center;
-      border: 1px solid rgba(169, 140, 255, 0.42);
+      border: 1px solid rgba(93, 183, 255, 0.42);
       border-radius: 50%;
-      color: var(--violet-light);
-      background: rgba(169, 140, 255, 0.12);
+      color: var(--blue-light);
+      background: rgba(93, 183, 255, 0.12);
       font-size: 12px;
     }
 
     .privacy-panel {
       padding: 34px;
-      border: 1px solid rgba(169, 140, 255, 0.28);
+      border: 1px solid rgba(93, 183, 255, 0.28);
       border-radius: 22px;
-      background: rgba(8, 8, 12, 0.76);
+      background: rgba(5, 12, 19, 0.78);
       box-shadow:
         inset 0 1px rgba(255, 255, 255, 0.08),
         0 30px 60px rgba(0, 0, 0, 0.42);
@@ -566,7 +572,7 @@
 
     .mini-label {
       margin-bottom: 6px;
-      color: #817b75;
+      color: #81909d;
       font: 10px "DM Mono", monospace;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -579,7 +585,7 @@
       gap: 20px;
       padding: 20px 0;
       border-bottom: 1px solid var(--line);
-      color: #e3ded8;
+      color: #e1edf5;
       font-size: 13.5px;
     }
 
@@ -588,16 +594,16 @@
     }
 
     .data-row small {
-      color: #8c857f;
+      color: #8c9ba8;
       text-align: right;
     }
 
     .pill {
       padding: 5px 11px;
-      border: 1px solid rgba(169, 140, 255, 0.3);
+      border: 1px solid rgba(93, 183, 255, 0.3);
       border-radius: 20px;
-      color: var(--violet-light);
-      background: rgba(169, 140, 255, 0.12);
+      color: var(--blue-light);
+      background: rgba(93, 183, 255, 0.12);
       font: 10.5px "DM Mono", monospace;
     }
 
@@ -632,7 +638,7 @@
       left: -36px;
       width: 10px;
       height: 10px;
-      border: 2px solid var(--violet);
+      border: 2px solid var(--blue);
       border-radius: 50%;
       background: var(--background);
       content: "";
@@ -653,7 +659,7 @@
     .stack-item span {
       display: block;
       margin-top: 6px;
-      color: #9d9791;
+      color: #9dabb7;
       font-size: 12.5px;
       line-height: 1.55;
     }
@@ -662,7 +668,7 @@
       padding: 52px;
       border: 1px solid var(--line);
       border-radius: 24px;
-      background: linear-gradient(130deg, #171324, #0b0b10);
+      background: linear-gradient(130deg, #0d2235, #080d13);
       box-shadow: inset 0 1px rgba(255, 255, 255, 0.08);
     }
 
@@ -678,7 +684,7 @@
 
     .quote footer {
       margin-top: 32px;
-      color: #a09a94;
+      color: #9eabb6;
       font-size: 13.5px;
     }
 
@@ -723,7 +729,7 @@
       gap: 20px;
       padding: 32px 0 38px;
       border-top: 1px solid var(--line);
-      color: #79736d;
+      color: #71808e;
       font: 11px "DM Mono", monospace;
     }
 
@@ -738,8 +744,14 @@
       transition: color 0.2s ease;
     }
 
-    .footer-links a:hover {
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
       color: var(--white);
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--cyan);
+      outline-offset: 4px;
     }
 
     @media (max-width: 800px) {
@@ -811,6 +823,11 @@
         height: 48px;
       }
 
+      .nav-action {
+        padding: 0 13px;
+        font-size: 11px;
+      }
+
       .o1 {
         width: 280px;
         height: 280px;
@@ -848,14 +865,17 @@
   <header>
     <div class="wrap">
       <nav>
-        <a class="logo" href="#top" aria-label="ChatTruX-AI home">
+        <a
+          class="logo"
+          href="https://www.chat.trux.website"
+          aria-label="ChatTruX-AI home"
+        >
           <img
             class="brand-mark"
             src="icon-48.svg"
             alt="ChatTruX-AI logo"
             width="48"
             height="48"
-            onerror="this.onerror=null; this.src='icon-48.svg';"
           />
           <span>ChatTruX-AI</span>
         </a>
@@ -868,7 +888,7 @@
 
         <a
           class="button nav-action"
-          href="https://chat.trux.website/"
+          href="https://www.chat.trux.website"
         >
           Launch ChatTruX-AI <span>↗</span>
         </a>
@@ -911,7 +931,6 @@
             alt=""
             width="54"
             height="54"
-            onerror="this.onerror=null; this.src='icon-48.svg';"
           />
         </div>
 
@@ -953,7 +972,9 @@
       <div class="grid">
         <article class="feature">
           <div class="icon">✦</div>
+
           <h3>Deep reasoning</h3>
+
           <p>
             Bring challenging questions, long contexts, and multi-step
             problems. ChatTruX-AI is designed to stay with the work.
@@ -962,7 +983,9 @@
 
         <article class="feature">
           <div class="icon">⌘</div>
+
           <h3>Clear working sessions</h3>
+
           <p>
             Keep your ideas, decisions, and next steps together in an
             interface designed to reduce distraction.
@@ -971,7 +994,9 @@
 
         <article class="feature">
           <div class="icon">◌</div>
+
           <h3>Useful from the start</h3>
+
           <p>
             Learn, write, plan, research, or explore. Begin with a blank prompt
             and move toward something practical.
@@ -998,6 +1023,7 @@
           <div class="points">
             <div class="point">
               <span class="check">✓</span>
+
               <span>
                 <b>Purpose-limited account data</b><br />
                 Basic information supports your profile, verification, and
@@ -1007,6 +1033,7 @@
 
             <div class="point">
               <span class="check">✓</span>
+
               <span>
                 <b>Google-powered sign-in</b><br />
                 Authentication is handled securely through Firebase with
@@ -1016,6 +1043,7 @@
 
             <div class="point">
               <span class="check">✓</span>
+
               <span>
                 <b>Plain-language practices</b><br />
                 We aim to explain what the product needs and why it needs it.
@@ -1069,6 +1097,7 @@
         <div class="stack">
           <div class="stack-item">
             <b>Google Cloud</b>
+
             <span>
               Cloud infrastructure supporting the ChatTruX-AI experience.
             </span>
@@ -1076,6 +1105,7 @@
 
           <div class="stack-item">
             <b>GitHub</b>
+
             <span>
               Source code developed and managed through a collaborative
               engineering workflow.
@@ -1084,6 +1114,7 @@
 
           <div class="stack-item">
             <b>Cloudflare</b>
+
             <span>
               Edge delivery and deployment foundations for a responsive
               experience.
@@ -1092,6 +1123,7 @@
 
           <div class="stack-item">
             <b>Firebase Authentication</b>
+
             <span>
               Secure Google sign-in and account authentication through Firebase.
             </span>
@@ -1128,13 +1160,13 @@
 
       <a
         class="button"
-        href="https://chat.trux.website/"
+        href="https://www.chat.trux.website"
       >
         Start using ChatTruX-AI <span>↗</span>
       </a>
 
       <small class="notice">
-        chat.trux.website
+        www.chat.trux.website
         &nbsp;·&nbsp;
         A product of TruX-Technologies
       </small>
@@ -1143,7 +1175,7 @@
         style="
           margin-top: 38px;
           margin-bottom: 12px;
-          color: #98918b;
+          color: #98a9b7;
           font-size: 13.5px;
         "
       >
@@ -1163,11 +1195,13 @@
     <div>TruX-Technologies</div>
 
     <div class="footer-links">
-      <a href="/privacy-policy">
+      <a href="https://privacy.trux.website">
         Privacy
       </a>
 
-      <a href="mailto:trux.ai.support@gmail.com?subject=ChatTruX-AI%20Support%20Request">
+      <a
+        href="mailto:trux.ai.support@gmail.com?subject=ChatTruX-AI%20Support%20Request"
+      >
         Contact
       </a>
     </div>
