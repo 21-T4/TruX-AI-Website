@@ -3,15 +3,15 @@
   "name": "TruX-AI — Intelligence, with boundaries.",
   "icons": [
     {
-      "src": "/icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512",
+      "src": "/icon-48.svg",
+      "type": "image/svg+xml",
+      "sizes": "48x48",
       "purpose": "any"
     },
     {
-      "src": "/icon-512.png",
-      "type": "image/png",
-      "sizes": "512x512",
+      "src": "/icon-48.svg",
+      "type": "image/svg+xml",
+      "sizes": "48x48",
       "purpose": "maskable"
     }
   ],
