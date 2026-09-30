@@ -4,7 +4,7 @@ const token = process.env.GITHUB_TOKEN;
 const headers = {"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28",...(token?{Authorization:`Bearer ${token}`}:{})};
 const r = await fetch(`https://api.github.com/repos/${repo}/issues?state=all&labels=news&per_page=50`, {headers});
 if (!r.ok) throw new Error(`GitHub API ${r.status}`);
-const issues = (await r.json()).filter(x => !x.pull_request && !x.locked);
+const issues = (await r.json()).filter(x => !x.pull_request && !x.locked && (/^NEWS:\s/i.test(x.title) || (x.labels||[]).some(l=>String(l.name).toLowerCase()==="news")));
 const esc = s => String(s ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
 const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,70)||"news";
 const plain = s => String(s||"").replace(/\r/g,"").replace(/^#+\s*/gm,"").replace(/\*\*(.*?)\*\*/g,"$1").replace(/\[(.*?)\]\(.*?\)/g,"$1").trim();
@@ -12,7 +12,7 @@ await mkdir("technology/live",{recursive:true});
 for(const f of await readdir("technology/live")) if(f.endsWith(".html")) await unlink("technology/live/"+f);
 const generated=[];
 for(const issue of issues){
-  const title=issue.title.replace(/^TruX update:\s*/i,"").trim();
+  const title=issue.title.replace(/^(NEWS:|TruX update:)\s*/i,"").trim();
   const s=`${issue.number}-${slug(title)}`;
   const url=`/live/${s}.html`;
   const body=plain(issue.body||"");
