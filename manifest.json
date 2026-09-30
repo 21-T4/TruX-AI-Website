@@ -1,13 +1,13 @@
 {
   "name": "TruX-AI — Think. Build. Create.",
   "short_name": "TruX-AI",
-  "start_url": "/",
-  "scope": "/",
+  "start_url": "https://www.trux.website/",
+  "scope": "https://www.trux.website/",
   "display": "standalone",
   "background_color": "#05070d",
   "theme_color": "#05070d",
   "description": "TruX-AI — a focused AI workspace with deep reasoning, image generation, personalization, and TruX-Code.",
   "icons": [
-    { "src": "/icon-48.svg", "sizes": "48x48", "type": "image/svg+xml", "purpose": "any" }
+    { "src": "https://www.trux.website/favicon.png", "sizes": "48x48", "type": "image/png", "purpose": "any" }
   ]
 }
