@@ -1,0 +1,29 @@
+name: Sync TruX Technology News
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled, closed, reopened, deleted]
+  workflow_dispatch:
+permissions:
+  contents: write
+  issues: read
+jobs:
+  sync:
+    if: github.event_name == 'workflow_dispatch' || github.event.issue.pull_request == null
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Generate news pages
+        run: node technology/scripts/sync-news.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+      - name: Commit generated news
+        run: |
+          git config user.name "trux-news-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add technology
+          git diff --cached --quiet || git commit -m "sync TruX Technology news"
+          git push
