@@ -3,10 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta http-equiv="refresh" content="0; url=https://chat.trux.website/" />
-  <script>window.location.replace("https://chat.trux.website/");</script>
-
-  <meta
+<meta
     name="description"
     content="ChatTruX-AI is a secure, thoughtful AI assistant built by TruX-Technologies for focused work, learning, and ambitious ideas."
   />
@@ -14,14 +11,16 @@
   <meta name="robots" content="index, follow" />
   <meta name="googlebot" content="index, follow" />
 
-  <link rel="canonical" href="https://www.trux.website/" />
+  <link rel="canonical" href="https://trux.website/" />
 
-  <link rel="icon" type="image/svg+xml" sizes="any" href="/icon-48.svg" />
+  
+  
+  <link rel="icon" href="/icon-48.svg" type="image/svg+xml" sizes="any" />
   <link rel="apple-touch-icon" href="/icon-48.svg" />
-  <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="/manifest.json" />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.trux.website/" />
+  <meta property="og:url" content="https://trux.website/" />
   <meta
     property="og:title"
     content="TruX-AI"
@@ -31,19 +30,19 @@
     content="A focused and privacy-conscious AI assistant by TruX-Technologies."
   />
 
-  <title>TruX-AI</title>
+  <title>TruX-AI | Think. Build. Create.</title>
 
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "TruX-AI",
-      "url": "https://www.trux.website/",
-      "description": "A focused and privacy-conscious AI assistant by TruX-Technologies.",
+      "url": "https://trux.website/",
+      "description": "A focused AI workspace with deep reasoning, image generation, personalization, and TruX-Code.",
       "publisher": {
         "@type": "Organization",
         "name": "TruX-Technologies",
-        "url": "https://www.trux.website/"
+        "url": "https://trux.website/"
       }
     }
   </script>
@@ -860,6 +859,17 @@
         padding: 32px;
       }
     }
+  
+    .trux-stats { gap: 1px; padding: 0; overflow: hidden; display:grid; grid-template-columns:repeat(4,1fr); border-radius:18px; background:rgba(255,255,255,.06); }
+    .trux-stats > div { padding:24px 20px; background:rgba(8,14,22,.82); }
+    .trux-stats strong { display:block; color:#eaf4ff; font-family:"Manrope",sans-serif; font-size:18px; }
+    .trux-stats span { display:block; margin-top:6px; color:#7f91a1; font:10px "DM Mono",monospace; text-transform:uppercase; letter-spacing:.08em; }
+    .trux-code-section { border-top:1px solid var(--line); border-bottom:1px solid var(--line); background:linear-gradient(120deg,rgba(10,31,56,.34),rgba(5,10,15,.66)); }
+    .trux-code-pills { display:flex; flex-wrap:wrap; gap:9px; margin-top:28px; }
+    .trux-code-pills span { padding:8px 12px; border:1px solid rgba(115,168,255,.28); border-radius:999px; color:var(--blue-light); background:rgba(58,134,255,.10); font:10px "DM Mono",monospace; }
+    .code-terminal { box-shadow:inset 0 1px rgba(255,255,255,.08),0 30px 60px rgba(0,0,0,.34); }
+    @media (max-width:800px){ .trux-stats{grid-template-columns:repeat(2,1fr);} }
+
   </style>
 </head>
 
@@ -883,9 +893,10 @@
         </a>
 
         <div class="navlinks">
-          <a href="#capabilities">Capabilities</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#infrastructure">Infrastructure</a>
+          <a href="#capabilities">Features</a>
+          <a href="#trux-code">TruX-Code</a>
+          <a href="#privacy">Security</a>
+          <a href="#limits">Limits</a>
         </div>
 
         <a
@@ -901,23 +912,23 @@
   <main id="top">
     <section class="hero wrap">
       <div>
-        <div class="eyebrow">By TruX-Technologies</div>
+        <div class="eyebrow">TruX-Technologies</div>
 
         <h1>
-          Think clearly.
-          <em>Build boldly.</em>
+          One workspace.
+          <em>More ways to think.</em>
         </h1>
 
         <p class="lede">
-          ChatTruX-AI is a thoughtful assistant for people working on ambitious
-          ideas. Explore difficult questions, organize your thinking, and turn
-          rough concepts into useful next steps.
+          TruX-AI brings focused chat, deep reasoning, image generation,
+          personalization, and a dedicated coding workspace together in one
+          place. Use TruX-Code for large-context repository work with GitHub.
         </p>
 
         <div class="trustline">
-          <span>Google sign-in</span>
-          <span>Privacy-conscious design</span>
-          <span>Built for focused work</span>
+          <span>150K-token TruX-Code</span>
+          <span>Unlimited Core chat</span>
+          <span>15 free image generations / month</span>
         </div>
       </div>
 
@@ -941,140 +952,160 @@
         <i class="node n3"></i>
 
         <div class="floating-card">
-          <span class="status">Focused session active</span>
+          <span class="status">TruX-Code ready</span>
           <p>
-            A calm workspace for reasoning, writing, planning, and building.
+            150K-token high-thinking workspace with GitHub-connected coding.
           </p>
         </div>
       </div>
     </section>
 
-    <div class="wrap logos">
-      <span>Built with</span>
-      <strong>Google Cloud</strong>
-      <strong>GitHub</strong>
-      <strong>Cloudflare</strong>
-      <strong>Firebase</strong>
+    <div class="wrap logos trux-stats">
+      <div><strong>150K</strong><span>TruX-Code tokens</span></div>
+      <div><strong>Unlimited</strong><span>Core model chat</span></div>
+      <div><strong>15 / mo</strong><span>Free image generations</span></div>
+      <div><strong>Up to 1M</strong><span>Pro token limit</span></div>
     </div>
 
     <section id="capabilities" class="wrap">
       <div class="section-head">
-        <div class="eyebrow">Designed for progress</div>
-
-        <h2>
-          A focused place to turn questions into momentum.
-        </h2>
-
+        <div class="eyebrow">What TruX-AI does</div>
+        <h2>Built around the work you actually want to finish.</h2>
         <p>
-          From a rough thought to a clear plan, ChatTruX-AI helps you work
-          through complex ideas while keeping the important parts in view.
+          Move between conversation, coding, image creation, and personalized
+          workflows without turning every task into the same experience.
         </p>
       </div>
 
       <div class="grid">
         <article class="feature">
           <div class="icon">✦</div>
-
-          <h3>Deep reasoning</h3>
-
-          <p>
-            Bring challenging questions, long contexts, and multi-step
-            problems. ChatTruX-AI is designed to stay with the work.
-          </p>
+          <h3>Deep thinking</h3>
+          <p>Use the core experience for focused conversations and difficult multi-step work.</p>
         </article>
 
         <article class="feature">
           <div class="icon">⌘</div>
-
-          <h3>Clear working sessions</h3>
-
-          <p>
-            Keep your ideas, decisions, and next steps together in an
-            interface designed to reduce distraction.
-          </p>
+          <h3>TruX-Code</h3>
+          <p>A high-thinking coding workspace with a 150K-token context and direct GitHub repository workflows.</p>
         </article>
 
         <article class="feature">
-          <div class="icon">◌</div>
+          <div class="icon">◈</div>
+          <h3>Image generation</h3>
+          <p>Generate images with 15 monthly generations for free, with higher-quality generation available on Pro.</p>
+        </article>
 
-          <h3>Useful from the start</h3>
+        <article class="feature">
+          <div class="icon">◎</div>
+          <h3>Personalization</h3>
+          <p>Shape the workspace and instructions around the way you prefer to work and interact with TruX-AI.</p>
+        </article>
 
-          <p>
-            Learn, write, plan, research, or explore. Begin with a blank prompt
-            and move toward something practical.
-          </p>
+        <article class="feature">
+          <div class="icon">∞</div>
+          <h3>Core chat</h3>
+          <p>Unlimited chat on the Core experience so everyday questions and longer work can stay in one place.</p>
+        </article>
+
+        <article class="feature">
+          <div class="icon">↗</div>
+          <h3>Support</h3>
+          <p>Reach the TruX-AI support team directly when you need help with the product or your account.</p>
         </article>
       </div>
     </section>
 
+    <section id="trux-code" class="trux-code-section">
+      <div class="wrap">
+        <div class="architecture">
+          <div>
+            <div class="eyebrow">The high-thinking workspace</div>
+            <h2>TruX-Code builds with you.</h2>
+            <p class="lede">
+              Work directly with GitHub repositories from a dedicated coding
+              environment built for large context, repository understanding,
+              proposed changes, and continued engineering sessions.
+            </p>
+            <div class="trux-code-pills">
+              <span>150K tokens</span>
+              <span>GitHub connected</span>
+              <span>Code-first workspace</span>
+            </div>
+          </div>
+          <div class="privacy-panel code-terminal">
+            <div class="mini-label">TRUX-CODE / WORKFLOW</div>
+            <div class="data-row"><span>Connect</span><small>GitHub repository</small></div>
+            <div class="data-row"><span>Understand</span><small>Large code context</small></div>
+            <div class="data-row"><span>Propose</span><small>File-level changes</small></div>
+            <div class="data-row"><span>Apply</span><small>Continue the session</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
     <section id="privacy" class="privacy">
       <div class="wrap privacy-grid">
         <div class="privacy-copy">
-          <div class="eyebrow">Privacy by intention</div>
+          <div class="eyebrow">Security-minded architecture</div>
 
           <h2>
-            Clear boundaries. Less unnecessary data.
+            Keep the important parts protected.
           </h2>
 
           <p>
-            ChatTruX-AI is built to keep data collection focused and
-            understandable. Basic account and profile details are used to
-            provide access, support sign-in, and help verify your account.
+            TruX-AI is designed with a security-focused architecture using
+            GitHub for source and repository workflows, Cloud Run for
+            deployment, and secure cloud storage for conversation data.
           </p>
 
           <div class="points">
             <div class="point">
               <span class="check">✓</span>
-
               <span>
-                <b>Purpose-limited account data</b><br />
-                Basic information supports your profile, verification, and
-                service operation.
+                <b>GitHub-backed engineering</b><br />
+                Source and repository workflows are managed through GitHub.
               </span>
             </div>
 
             <div class="point">
               <span class="check">✓</span>
-
               <span>
-                <b>Google-powered sign-in</b><br />
-                Authentication is handled securely through Firebase with
-                Google sign-in.
+                <b>Cloud Run deployment</b><br />
+                The application runtime is deployed on Google Cloud Run.
               </span>
             </div>
 
             <div class="point">
               <span class="check">✓</span>
-
               <span>
-                <b>Plain-language practices</b><br />
-                We aim to explain what the product needs and why it needs it.
+                <b>Secure conversation storage</b><br />
+                Chat data is stored in a secured cloud bucket.
               </span>
             </div>
           </div>
         </div>
+        </div>
 
         <aside class="privacy-panel">
-          <div class="mini-label">Privacy overview</div>
+          <div class="mini-label">Architecture snapshot</div>
 
           <div class="data-row">
-            <span>Account sign-in</span>
-            <small>Firebase + Google</small>
+            <span>Source & repository</span><small>GitHub</small>
           </div>
 
           <div class="data-row">
-            <span>Basic profile details</span>
-            <small>Profile and verification</small>
+            <span>Application deployment</span><small>Google Cloud Run</small>
           </div>
 
           <div class="data-row">
-            <span>Account security</span>
-            <span class="pill">Protected</span>
+            <span>Chat data</span><small>Secure cloud bucket</small>
           </div>
 
           <div class="data-row">
-            <span>Core principle</span>
-            <span class="pill">Collect less</span>
+            <span>Security posture</span><span class="pill">Protected</span>
           </div>
         </aside>
       </div>
@@ -1084,55 +1115,66 @@
       <div class="architecture">
         <div>
           <div class="eyebrow">Dependable foundations</div>
-
           <h2>
-            A modern stack working quietly behind the scenes.
+            Modern infrastructure behind the workspace.
           </h2>
-
           <p class="lede">
-            ChatTruX-AI connects trusted cloud and developer platforms to
-            deliver a smooth, resilient product experience. Security is an
-            ongoing practice, and we build with that responsibility in mind.
+            TruX-AI combines cloud deployment, repository tooling, and secured
+            storage to support chat, image generation, personalization, and
+            repository-based coding workflows.
           </p>
         </div>
 
         <div class="stack">
           <div class="stack-item">
-            <b>Google Cloud</b>
-
-            <span>
-              Cloud infrastructure supporting the ChatTruX-AI experience.
-            </span>
-          </div>
-
-          <div class="stack-item">
             <b>GitHub</b>
-
-            <span>
-              Source code developed and managed through a collaborative
-              engineering workflow.
-            </span>
+            <span>Source code and repository workflows for TruX-Code.</span>
           </div>
-
           <div class="stack-item">
-            <b>Cloudflare</b>
-
-            <span>
-              Edge delivery and deployment foundations for a responsive
-              experience.
-            </span>
+            <b>Google Cloud Run</b>
+            <span>Application deployment and runtime infrastructure.</span>
           </div>
-
+          <div class="stack-item">
+            <b>Secure cloud bucket</b>
+            <span>Conversation data storage designed around controlled access.</span>
+          </div>
           <div class="stack-item">
             <b>Firebase Authentication</b>
-
-            <span>
-              Secure Google sign-in and account authentication through Firebase.
-            </span>
+            <span>Account authentication and Google sign-in.</span>
           </div>
         </div>
       </div>
     </section>
+
+    <section id="limits" class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Capacity at a glance</div>
+        <h2>Clear limits for each experience.</h2>
+        <p>
+          The public site now reflects the current headline limits rather than
+          the older generic feature copy.
+        </p>
+      </div>
+      <div class="grid">
+        <article class="feature">
+          <div class="icon">∞</div>
+          <h3>Core</h3>
+          <p>Unlimited chat with the Core model.</p>
+        </article>
+        <article class="feature">
+          <div class="icon">1M</div>
+          <h3>Pro</h3>
+          <p>Up to a 1 million token limit for very large sessions.</p>
+        </article>
+        <article class="feature">
+          <div class="icon">15</div>
+          <h3>Free images</h3>
+          <p>15 image generations per month, with higher-quality image generation on Pro.</p>
+        </article>
+      </div>
+    </section>
+
+
 
     <section class="wrap">
       <div class="quote">
@@ -1149,29 +1191,19 @@
     </section>
 
     <section id="start" class="cta wrap">
-      <div class="eyebrow">Start with the difficult question</div>
+      <div class="eyebrow">Your next workspace</div>
 
-      <h2>
-        Make your next idea useful.
-      </h2>
+      <h2>Think deeply. Build directly. Create freely.</h2>
 
       <p>
-        ChatTruX-AI is ready when you are: a focused AI assistant for serious
-        questions, creative work, and ambitious projects.
-      </p>
+        <p>TruX-AI is ready for the next question, project, image, or repository you want to work on.</p>
 
       <a
         class="button"
         href="https://chat.trux.website/"
       >
-        Start using ChatTruX-AI <span>↗</span>
+        Try TruX <span>↗</span>
       </a>
-
-      <small class="notice">
-        chat.trux.website
-        &nbsp;·&nbsp;
-        A product of TruX-Technologies
-      </small>
 
       <p
         style="
@@ -1194,7 +1226,7 @@
   </main>
 
   <footer class="site-footer wrap">
-    <div>TruX-Technologies</div>
+    <div>TruX-Technologies · TruX-AI</div>
 
     <div class="footer-links">
       <a href="https://privacy.trux.website">
