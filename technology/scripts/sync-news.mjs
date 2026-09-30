@@ -1,0 +1,31 @@
+import { mkdir, writeFile, readdir, unlink, readFile } from "node:fs/promises";
+const repo = process.env.GITHUB_REPOSITORY || "21-T4/TruX-AI-Website";
+const token = process.env.GITHUB_TOKEN;
+const headers = {"Accept":"application/vnd.github+json","X-GitHub-Api-Version":"2022-11-28",...(token?{Authorization:`Bearer ${token}`}:{})};
+const r = await fetch(`https://api.github.com/repos/${repo}/issues?state=all&labels=news&per_page=50`, {headers});
+if (!r.ok) throw new Error(`GitHub API ${r.status}`);
+const issues = (await r.json()).filter(x => !x.pull_request && !x.locked);
+const esc = s => String(s ?? "").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const slug = s => String(s).toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,70)||"news";
+const plain = s => String(s||"").replace(/\r/g,"").replace(/^#+\s*/gm,"").replace(/\*\*(.*?)\*\*/g,"$1").replace(/\[(.*?)\]\(.*?\)/g,"$1").trim();
+await mkdir("technology/live",{recursive:true});
+for(const f of await readdir("technology/live")) if(f.endsWith(".html")) await unlink("technology/live/"+f);
+const generated=[];
+for(const issue of issues){
+  const title=issue.title.replace(/^TruX update:\s*/i,"").trim();
+  const s=`${issue.number}-${slug(title)}`;
+  const url=`/live/${s}.html`;
+  const body=plain(issue.body||"");
+  const desc=(body.split("\n").map(x=>x.trim()).find(Boolean)||title).slice(0,180);
+  const ld={"@context":"https://schema.org","@type":"NewsArticle","headline":title,"datePublished":issue.created_at,"dateModified":issue.updated_at,"author":{"@type":"Organization","name":"TruX Technologies"},"publisher":{"@type":"Organization","name":"TruX Technology","logo":{"@type":"ImageObject","url":"https://technology.trux.website/icon-48.svg"}},"mainEntityOfPage":"https://technology.trux.website"+url};
+  const bodyHtml=body.split("\n\n").filter(Boolean).map(p=>`<p>${esc(p)}</p>`).join("");
+  const html=`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(title)} | TruX Technology</title><meta name="description" content="${esc(desc)}"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><link rel="canonical" href="https://technology.trux.website${url}"><link rel="icon" href="/icon-48.svg" type="image/svg+xml"><link rel="stylesheet" href="/styles.css"><script type="application/ld+json">${JSON.stringify(ld)}</script></head><body><main class="wrap" style="padding:70px 0;max-width:850px"><a class="brand" href="/"><img src="/icon-48.svg" alt="TruX logo"><span>TruX <b>Technology</b></span></a><span class="kicker" style="display:block;margin-top:65px">LIVE UPDATE · ${new Date(issue.created_at).toUTCString().slice(0,16)}</span><h1 style="font-size:clamp(42px,7vw,76px);line-height:1;letter-spacing:-.07em">${esc(title)}</h1><div style="color:#9eabb8;line-height:1.9;font-size:17px">${bodyHtml}</div><p><a class="ghost" href="/">← Back to TruX Technology</a></p></main></body></html>`;
+  await writeFile("technology/live/"+s+".html",html);
+  generated.push({headline:title,description:desc,datePublished:issue.created_at,author:"TruX Technologies",category:"Live Update",url});
+}
+const seed=JSON.parse(await readFile("technology/data/news-index.json","utf8")).filter(x=>!x.url.startsWith("/live/"));
+const all=[...seed,...generated].sort((a,b)=>new Date(b.datePublished)-new Date(a.datePublished));
+await writeFile("technology/data/news-index.json",JSON.stringify(all,null,2)+"\n");
+const urls=["https://technology.trux.website/","https://technology.trux.website/news/trux-code-150k.html","https://technology.trux.website/news/creation-workspace.html","https://technology.trux.website/news/security-architecture.html",...generated.map(x=>"https://technology.trux.website"+x.url)];
+await writeFile("technology/sitemap.xml",'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls.map(u=>`<url><loc>${u}</loc></url>`).join("")+"</urlset>\n");
+await writeFile("technology/rss.xml",'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>TruX Technology</title><link>https://technology.trux.website/</link><description>Official TruX-AI product and engineering news.</description>'+all.slice(0,20).map(x=>`<item><title>${esc(x.headline)}</title><link>https://technology.trux.website${x.url}</link><pubDate>${new Date(x.datePublished).toUTCString()}</pubDate><description>${esc(x.description)}</description></item>`).join("")+'</channel></rss>');
