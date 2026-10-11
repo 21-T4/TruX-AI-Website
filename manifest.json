@@ -1,13 +1,18 @@
 {
-  "name": "TruX-AI — Think. Build. Create.",
-  "short_name": "TruX-AI",
+  "name": "TruX-Omni — The All-New AI Workspace",
+  "short_name": "TruX-Omni",
   "start_url": "https://www.trux.website/",
   "scope": "https://www.trux.website/",
   "display": "standalone",
   "background_color": "#05070d",
   "theme_color": "#05070d",
-  "description": "TruX-AI — a focused AI workspace with deep reasoning, image generation, personalization, and TruX-Code.",
+  "description": "TruX-Omni — an all-in-one AI workspace for chat, deep reasoning, image generation, smart model selection, and TruX-Code.",
   "icons": [
-    { "src": "https://www.trux.website/favicon.png", "sizes": "48x48", "type": "image/png", "purpose": "any" }
+    {
+      "src": "https://www.trux.website/favicon.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }
