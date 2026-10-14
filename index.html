@@ -229,6 +229,25 @@
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
     }
 
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .hero-actions .button {
+      min-height: 46px;
+    }
+    @media (max-width: 560px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-actions .button {
+        width: 100%;
+      }
+    }
+
     .hero {
       position: relative;
       display: grid;
@@ -899,6 +918,7 @@
           <a href="#trux-code">TruX-Code</a>
           <a href="#privacy">Security</a>
           <a href="#limits">Limits</a>
+          <a href="https://trux-ai-workspace.trux.website/TruX-Omni-Android.apk">Download mobile</a>
         </div>
 
         <a
@@ -929,6 +949,11 @@
           <span>150K-token TruX-Code</span>
           <span>Unlimited Core chat</span>
           <span>15 image generations per month</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="button" href="https://trux-ai-workspace.trux.website/">Launch TruX-Omni <span>↗</span></a>
+          <a class="button secondary" href="https://trux-ai-workspace.trux.website/TruX-Omni-Android.apk">Download TruX-Omni for mobile <span>↓</span></a>
         </div>
       </div>
 
@@ -1209,6 +1234,14 @@
         href="https://trux-ai-workspace.trux.website/"
       >
         Try TruX-Omni <span>↗</span>
+      </a>
+
+      <a
+        class="button secondary"
+        style="margin-left: 8px;"
+        href="https://trux-ai-workspace.trux.website/TruX-Omni-Android.apk"
+      >
+        Download TruX-Omni for mobile <span>↓</span>
       </a>
 
       <p
