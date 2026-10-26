@@ -273,6 +273,24 @@
       border-color: rgba(255, 255, 255, 0.26);
     }
 
+    .btn-code {
+      background: rgba(174, 185, 255, 0.08);
+      color: var(--accent-strong);
+      border-color: rgba(174, 185, 255, 0.32);
+    }
+
+    .btn-code:hover,
+    .btn-code:focus-visible {
+      background: rgba(174, 185, 255, 0.15);
+      border-color: rgba(174, 185, 255, 0.58);
+      box-shadow: 0 8px 28px rgba(132, 149, 255, 0.12);
+      transform: translateY(-1px);
+    }
+
+    .nav-label-short {
+      display: none;
+    }
+
     .btn-lg {
       min-height: 46px;
       padding: 0 24px;
@@ -624,6 +642,128 @@
       line-height: 1.65;
     }
 
+    /* Live newsroom feed */
+    .updates-heading {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .updates-heading .section-head {
+      margin-bottom: 30px;
+    }
+
+    .updates-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      flex: 0 0 auto;
+      margin-bottom: 38px;
+      color: var(--txt-2);
+      font: 500 11px/1.4 var(--font-mono);
+      letter-spacing: 0.03em;
+    }
+
+    .updates-status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      flex: none;
+      border-radius: 50%;
+      background: #858895;
+    }
+
+    .updates-status.is-live::before {
+      background: #71dca5;
+      box-shadow: 0 0 12px rgba(113, 220, 165, 0.55);
+    }
+
+    .updates-status.is-error::before {
+      background: #f0b36c;
+      box-shadow: 0 0 10px rgba(240, 179, 108, 0.35);
+    }
+
+    .updates-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    .update-card {
+      min-height: 252px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .update-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      color: var(--txt-3);
+      font: 500 10px/1.4 var(--font-mono);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .update-category {
+      color: var(--accent);
+    }
+
+    .update-card h3 {
+      margin: 0 0 12px;
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+      color: var(--txt);
+    }
+
+    .update-card p {
+      margin: 0 0 24px;
+      color: var(--txt-2);
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+
+    .update-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: auto;
+      color: var(--accent-strong);
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    .updates-empty {
+      grid-column: 1 / -1;
+      margin: 0;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      color: var(--txt-2);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .updates-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .updates-checked {
+      margin: 0;
+      color: var(--txt-3);
+      font: 500 10.5px/1.5 var(--font-mono);
+      text-align: right;
+    }
+
     /* TruX-Code Showcase */
     .split-section {
       border-top: 1px solid var(--line);
@@ -667,6 +807,20 @@
       background: rgba(255, 255, 255, 0.03);
       color: var(--accent-strong);
       font: 500 11.5px/1 var(--font-mono);
+    }
+
+    .code-actions {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .code-note {
+      color: var(--txt-3);
+      font-size: 12px;
+      line-height: 1.5;
     }
 
     .terminal-card {
@@ -1021,6 +1175,11 @@
       outline-offset: 4px;
     }
 
+    .btn:focus-visible,
+    .update-card:focus-visible {
+      outline-offset: 5px;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .nav-links {
@@ -1042,6 +1201,24 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .updates-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .updates-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+      }
+
+      .updates-heading .section-head {
+        margin-bottom: 20px;
+      }
+
+      .updates-status {
+        margin-bottom: 24px;
+      }
+
       .metrics-strip {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1056,17 +1233,80 @@
         display: none;
       }
 
+      .navbar {
+        gap: 10px;
+      }
+
+      .brand {
+        gap: 7px;
+        font-size: 15px;
+      }
+
+      .brand-mark {
+        width: 28px;
+        height: 28px;
+      }
+
+      .nav-actions {
+        gap: 4px;
+      }
+
+      .nav-actions .btn {
+        min-height: 34px;
+        padding: 0 8px;
+        gap: 4px;
+        font-size: 10.5px;
+      }
+
+      .nav-label-full {
+        display: none;
+      }
+
+      .nav-label-short {
+        display: inline;
+      }
+
       .bento-grid,
+      .updates-grid,
       .metrics-strip {
         grid-template-columns: 1fr;
       }
 
-      .hero-actions {
+      .hero-actions-main,
+      .hero-actions-final {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
+        gap: 10px;
+      }
+
+      .hero-actions-main .btn,
+      .hero-actions-final .btn {
+        width: 100%;
+        min-width: 0;
+        padding: 0 10px;
+        font-size: 12px;
+      }
+
+      .hero-actions-main .btn:nth-child(3),
+      .hero-actions-final .btn:nth-child(3) {
+        grid-column: 1 / -1;
+      }
+
+      .updates-footer {
         flex-direction: column;
         align-items: stretch;
       }
 
-      .hero-actions .btn {
+      .updates-checked {
+        text-align: left;
+      }
+
+      .code-actions {
+        align-items: stretch;
+      }
+
+      .code-actions .btn {
         width: 100%;
       }
 
@@ -1084,6 +1324,20 @@
         align-items: flex-start;
       }
     }
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 
@@ -1093,7 +1347,7 @@
       <nav class="navbar" aria-label="Main navigation">
         <a
           class="brand"
-          href="https://trux-ai-workspace.trux.website/"
+          href="/"
           aria-label="TruX-Omni-AI home"
         >
           <img
@@ -1119,8 +1373,20 @@
           <a
             class="btn btn-primary"
             href="https://trux-ai-workspace.trux.website/"
+            aria-label="Launch TruX-Omni"
           >
-            Launch TruX-Omni <span>↗</span>
+            <span class="nav-label-full">Launch TruX-Omni</span>
+            <span class="nav-label-short">Omni</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            class="btn btn-code"
+            href="https://trux-code.trux.website/"
+            aria-label="Open TruX-Code workspace"
+          >
+            <span class="nav-label-full">TruX-Code</span>
+            <span class="nav-label-short">Code</span>
+            <span aria-hidden="true">↗</span>
           </a>
         </div>
       </nav>
@@ -1144,9 +1410,12 @@
         TruX-Omni-AI unifies high-capacity AI chat, deep reasoning, image and video creation, smart auto model selection, and GitHub-connected software engineering in a single workspace.
       </p>
 
-      <div class="hero-actions">
+      <div class="hero-actions hero-actions-main">
         <a class="btn btn-primary btn-lg" href="https://trux-ai-workspace.trux.website/">
-          Launch TruX-Omni <span>↗</span>
+          Launch TruX-Omni <span aria-hidden="true">↗</span>
+        </a>
+        <a class="btn btn-code btn-lg" href="https://trux-code.trux.website/">
+          Launch TruX-Code <span aria-hidden="true">↗</span>
         </a>
         <a class="btn btn-secondary btn-lg" href="#plans">
           Compare Plans
@@ -1247,7 +1516,7 @@
           <div class="bento-icon">✦</div>
           <h3>Auto model selection</h3>
           <p>
-            Included on every plan. TruX-Omni automatically matches the optimal model and reasoning depth to each prompt—or lets you choose manually.
+            Auto model routing is included on every plan. Manual model selection is available on Pro and TruX AI Edge.
           </p>
         </article>
 
@@ -1263,7 +1532,7 @@
           <div class="bento-icon">◈</div>
           <h3>Image &amp; Video Studio</h3>
           <p>
-            Generate 5 images per day on Free, or scale up to 30 images and 20 videos per day across Plus, Pro, and TruX AI Edge.
+            Generate 5 images per day on Free. Plus, Pro, and TruX AI Edge are planned for 10, 20, and 30 images per day, with 1, 10, and 20 videos per day respectively, starting December 1, 2026.
           </p>
         </article>
 
@@ -1293,6 +1562,27 @@
       </div>
     </section>
 
+    <!-- Live newsroom updates -->
+    <section id="latest-updates" class="section wrap">
+      <div class="updates-heading">
+        <div class="section-head">
+          <div class="eyebrow"><span class="eyebrow-dot"></span>Live from TruX</div>
+          <h2>Product updates, straight from the newsroom.</h2>
+          <p>Latest product and engineering stories load from the official TruX Technology feed, so this section stays current as new updates are published.</p>
+        </div>
+        <div id="updates-status" class="updates-status" role="status" aria-live="polite">Connecting to the live feed</div>
+      </div>
+
+      <div id="updates-feed" class="bento-grid updates-grid" aria-live="polite">
+        <p class="updates-empty">Loading the latest TruX updates…</p>
+      </div>
+
+      <div class="updates-footer">
+        <a class="btn btn-secondary" href="https://technology.trux.website/">Open TruX Newsroom <span aria-hidden="true">↗</span></a>
+        <p id="updates-checked" class="updates-checked">Waiting for the live feed…</p>
+      </div>
+    </section>
+
     <!-- TruX-Code Section -->
     <section id="trux-code" class="section split-section">
       <div class="wrap split-grid">
@@ -1306,6 +1596,12 @@
             <span class="pill-tag">200K–1.2M monthly tokens</span>
             <span class="pill-tag">Thinking tokens included</span>
             <span class="pill-tag">GitHub connected</span>
+          </div>
+          <div class="code-actions">
+            <a class="btn btn-code btn-lg" href="https://trux-code.trux.website/">
+              Open TruX-Code <span aria-hidden="true">↗</span>
+            </a>
+            <span class="code-note">Open the dedicated coding workspace.</span>
           </div>
         </div>
 
@@ -1400,7 +1696,7 @@
             <h3>Pro</h3>
             <p class="plan-desc">Higher limits for demanding daily work.</p>
             <ul class="plan-features">
-              <li>Auto model selection</li>
+              <li>Auto plus manual model selection</li>
               <li>4× chat usage — 4,000,000 tokens per day across all models</li>
               <li>4× TruX-Code usage — 800,000 tokens per month, including thinking tokens</li>
               <li>20 images per day</li>
@@ -1420,7 +1716,7 @@
             <h3>TruX AI Edge</h3>
             <p class="plan-desc">Our highest-capacity plan, built for early access.</p>
             <ul class="plan-features">
-              <li>Auto model selection with flagship model access</li>
+              <li>Auto selection, flagship models, and expanded model choices</li>
               <li>6× chat usage — 6,000,000 tokens per day across all models</li>
               <li>6× TruX-Code usage — 1,200,000 tokens per month, including thinking tokens</li>
               <li>Expanded model choices and new models first</li>
@@ -1447,7 +1743,7 @@
           <div class="eyebrow"><span class="eyebrow-dot"></span>Security-minded architecture</div>
           <h2>Keep the important parts protected.</h2>
           <p>
-            TruX-Omni-AI is engineered with a security-focused foundation using GitHub for source and repository workflows, Google Cloud Run for scalable runtime deployment, and secured cloud storage for conversation data.
+            TruX-Omni-AI uses GitHub for source and repository workflows and Google Cloud Run for the application runtime. Chat history stays in browser storage; cloud-bucket storage is reserved for supported media assets rather than chat history.
           </p>
 
           <div class="security-points">
@@ -1470,8 +1766,8 @@
             <div class="security-point">
               <span class="check-badge">✓</span>
               <span>
-                <b>Secured cloud storage &amp; authentication</b><br />
-                Account access is protected by Firebase Authentication with encrypted cloud bucket storage.
+                <b>Sign-in &amp; browser-based chat history</b><br />
+                Firebase Authentication protects sign-in; chat history stays in your browser, separate from media storage.
               </span>
             </div>
           </div>
@@ -1491,8 +1787,12 @@
             <small>Google Cloud Run</small>
           </div>
           <div class="terminal-row">
-            <span>Conversation storage</span>
-            <small>Secured Cloud Bucket</small>
+            <span>Chat history</span>
+            <small>Browser local storage</small>
+          </div>
+          <div class="terminal-row">
+            <span>Media assets</span>
+            <small>Cloud bucket storage</small>
           </div>
           <div class="terminal-row">
             <span>Identity &amp; sign-in</span>
@@ -1522,9 +1822,12 @@
         TruX-Omni-AI is ready for your next question, repository, image, or engineering session.
       </p>
 
-      <div class="hero-actions" style="margin-bottom: 0;">
+      <div class="hero-actions hero-actions-final" style="margin-bottom: 0;">
         <a class="btn btn-primary btn-lg" href="https://trux-ai-workspace.trux.website/">
-          Launch TruX-Omni <span>↗</span>
+          Launch TruX-Omni <span aria-hidden="true">↗</span>
+        </a>
+        <a class="btn btn-code btn-lg" href="https://trux-code.trux.website/">
+          Launch TruX-Code <span aria-hidden="true">↗</span>
         </a>
         <a
           class="btn btn-secondary btn-lg"
@@ -1540,12 +1843,114 @@
     <div>© 2026 TruX-Technologies · TruX-Omni-AI</div>
 
     <div class="footer-links">
-      <a href="https://trux-ai-workspace.trux.website/">Launch Workspace</a>
+      <a href="https://trux-ai-workspace.trux.website/">Launch TruX-Omni</a>
+      <a href="https://trux-code.trux.website/">Launch TruX-Code</a>
       <a href="#plans">Plans</a>
       <a href="https://technology.trux.website/">Newsroom</a>
       <a href="https://privacy.trux.website">Privacy</a>
       <a href="mailto:trux.ai.support@gmail.com?subject=TruX-Omni%20Support%20Request">Contact</a>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      const FEED_URL = "https://technology.trux.website/data/news-index.json";
+      const NEWSROOM_ORIGIN = "https://technology.trux.website";
+      const feed = document.getElementById("updates-feed");
+      const status = document.getElementById("updates-status");
+      const checked = document.getElementById("updates-checked");
+
+      if (!feed || !status || !checked) return;
+
+      function escapeHtml(value) {
+        return String(value ?? "").replace(/[&<>"']/g, (character) => ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;"
+        })[character]);
+      }
+
+      function storyUrl(value) {
+        try {
+          const url = new URL(String(value ?? ""), NEWSROOM_ORIGIN + "/");
+          return url.origin === NEWSROOM_ORIGIN && url.protocol === "https:" ? url.href : null;
+        } catch {
+          return null;
+        }
+      }
+
+      function setFeedStatus(kind, message) {
+        status.className = "updates-status" + (kind ? " " + kind : "");
+        status.textContent = message;
+      }
+
+      function formatCheckedTime() {
+        checked.textContent = "Feed checked " + new Intl.DateTimeFormat(undefined, {
+          hour: "numeric",
+          minute: "2-digit"
+        }).format(new Date());
+      }
+
+      function renderStory(story) {
+        const url = storyUrl(story.url);
+        if (!url || !String(story.headline ?? "").trim()) return "";
+
+        const published = new Date(story.datePublished);
+        const validDate = !Number.isNaN(published.getTime());
+        const dateLabel = validDate
+          ? new Intl.DateTimeFormat(undefined, { year: "numeric", month: "short", day: "numeric" }).format(published)
+          : "TruX update";
+        const dateTime = validDate ? published.toISOString() : "";
+
+        return '<a class="bento-card update-card" href="' + escapeHtml(url) + '">' +
+          '<div class="update-meta"><span class="update-category">' + escapeHtml(story.category || "UPDATE") +
+          '</span><time datetime="' + escapeHtml(dateTime) + '">' + escapeHtml(dateLabel) + '</time></div>' +
+          '<h3>' + escapeHtml(story.headline) + '</h3>' +
+          '<p>' + escapeHtml(story.description || "Read the full update from the TruX Technology newsroom.") + '</p>' +
+          '<span class="update-link">Read story <span aria-hidden="true">↗</span></span></a>';
+      }
+
+      async function loadLiveUpdates() {
+        try {
+          const response = await fetch(FEED_URL, {
+            cache: "no-store",
+            headers: { "Accept": "application/json" }
+          });
+          if (!response.ok) throw new Error("The newsroom feed returned " + response.status);
+
+          const stories = await response.json();
+          if (!Array.isArray(stories)) throw new Error("The newsroom feed has an unexpected format");
+
+          const latest = stories
+            .filter((story) => story && storyUrl(story.url) && String(story.headline ?? "").trim())
+            .sort((a, b) => {
+              const timeA = new Date(a.datePublished).getTime();
+              const timeB = new Date(b.datePublished).getTime();
+              return (Number.isNaN(timeB) ? 0 : timeB) - (Number.isNaN(timeA) ? 0 : timeA);
+            })
+            .slice(0, 3);
+
+          const cards = latest.map(renderStory).filter(Boolean);
+          feed.innerHTML = cards.length
+            ? cards.join("")
+            : '<p class="updates-empty">No newsroom stories are published yet. Visit the newsroom for the latest product information.</p>';
+
+          setFeedStatus("is-live", "Live newsroom feed connected");
+          formatCheckedTime();
+        } catch (error) {
+          feed.innerHTML = '<p class="updates-empty">The live feed could not be loaded right now. Open the TruX Newsroom to check for current updates.</p>';
+          setFeedStatus("is-error", "Live feed temporarily unavailable");
+          formatCheckedTime();
+        }
+      }
+
+      loadLiveUpdates();
+      window.setInterval(() => {
+        if (document.visibilityState === "visible") loadLiveUpdates();
+      }, 5 * 60 * 1000);
+    })();
+  </script>
 </body>
 </html>
