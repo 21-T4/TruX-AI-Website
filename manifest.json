@@ -1,12 +1,12 @@
 {
-  "name": "TruX-Omni-AI",
-  "short_name": "TruX-Omni-AI",
+  "name": "TruX-Technologies",
+  "short_name": "TruX",
   "start_url": "https://www.trux.website/",
   "scope": "https://www.trux.website/",
   "display": "standalone",
   "background_color": "#000000",
-  "theme_color": "#000000",
-  "description": "TruX-Omni-AI — the frontier AI workspace for chat, deep reasoning, image and video generation, auto model selection, and TruX-Code.",
+  "theme_color": "#0a1624",
+  "description": "TruX-Technologies builds TruX-Omni for AI chat, research, and visual creation, plus TruX-Code for GitHub-connected software engineering.",
   "icons": [
     {
       "src": "https://www.trux.website/favicon.png",
