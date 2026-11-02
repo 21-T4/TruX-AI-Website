@@ -1,0 +1,12 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "trux.website" }],
+      "destination": "https://www.trux.website/",
+      "permanent": true
+    }
+  ]
+}
